@@ -55,7 +55,19 @@ std::map<std::string, std::string> headers = {
    "% plugin_name hal_plugin_imx636_evk4\n"
    "% sensor_generation 4.2\n"
    "% serial_number 00050108\n"
-   "% system_ID 49\n"}};
+   "% system_ID 49\n"},
+
+  {"genx320",
+   "% date 2022-09-14 17:11:11\n"
+   "% evt 3.0\n"
+   "% firmware_version 0.0.0\n"
+   "% format EVT3\n"
+   "% geometry 320x320\n"
+   "% integrator_name Prophesee\n"
+   "% plugin_name hal_plugin_gen32_evk3\n"
+   "% sensor_generation 3.2\n"
+   "% serial_number 00000000\n"
+   "% system_ID 0\n"}};
 
 size_t write(
   std::fstream & out, const uint8_t * p, const size_t num_bytes, const uint64_t time_base,
