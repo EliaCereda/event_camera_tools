@@ -16,8 +16,16 @@
 set(CMAKE_CXX_STANDARD 17)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+add_compile_options(-Wno-error=unused-private-field -Wno-error=ignored-qualifiers -Wno-error=c11-extensions)
 # add_compile_options(-fsanitize=address)
 # add_link_options(-fsanitize=address)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  # Demote warnings we can't fix here: the conda macOS toolchain emits an
+  # unsupported-platform #warning, and ROS's rosidl_runtime_cpp/traits.hpp uses
+  # the C++17-deprecated std::wstring_convert.
+  add_compile_options("-Wno-error=#warnings")
+endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)

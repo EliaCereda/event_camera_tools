@@ -16,6 +16,7 @@
 #include <event_camera_codecs/decoder_factory.h>
 #include <event_camera_codecs/event_processor.h>
 #include <inttypes.h>
+#include <unistd.h>
 
 #include <event_camera_msgs/msg/event_packet.hpp>
 #include <list>
